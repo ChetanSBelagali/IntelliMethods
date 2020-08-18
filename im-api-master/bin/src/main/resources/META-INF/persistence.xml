@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<!-- <persistence-unit name="SMRT_PU" transaction-type="RESOURCE_LOCAL"> 
+		<exclude-unlisted-classes>false</exclude-unlisted-classes> <class>com.smrtsolutions.survey.model.Customer</class> 
+		<class>com.smrtsolutions.survey.model.SMRTUser</class> <class>com.smrtsolutions.survey.model.SMRTRole</class> 
+		<properties> <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> 
+		<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/> 
+		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/smrt"/> 
+		<property name="javax.persistence.jdbc.user" value="smrtuser"/> <property 
+		name="javax.persistence.jdbc.password" value="smrtstuff!!"/> <property name="eclipselink.application-location" 
+		value="/tmp/smrt/"/> <property name="eclipselink.ddl-generation" value="create-tables"/> 
+		<property name="eclipselink.create-ddl-jdbc-file-name" value="smrt_tables_create.jdbc"/> 
+		<property name="eclipselink.drop-ddl-jdbc-file-name" value="smrt_tables_drop.jdbc"/> 
+		<property name="eclipselink.ddl-generation.output-mode" value="sql-script"/> 
+		<property name="eclipselink.logging.level" value="FINEST"/> </properties> 
+		</persistence-unit> -->
+	<persistence-unit name="SMRT_PU"
+		transaction-type="RESOURCE_LOCAL">
+		<class>com.smrtsolutions.survey.model.Customer</class>
+		<class>com.smrtsolutions.survey.model.SMRTUser</class>
+		<class>com.smrtsolutions.survey.model.SMRTRole</class>
+		<class>com.smrtsolutions.survey.model.Survey</class>
+		<class>com.smrtsolutions.survey.model.SurveySection</class>
+		<class>com.smrtsolutions.survey.model.SurveySectionQuestion</class>
+		<class>com.smrtsolutions.survey.model.SurveyResult</class>
+		<class>com.smrtsolutions.survey.model.ParticipantSurveyStatus</class>
+		<class>com.smrtsolutions.survey.model.ParticipantNote</class>
+		<class>com.smrtsolutions.survey.model.Content</class>
+		<class>com.smrtsolutions.survey.model.Dashboard</class>
+		<class>com.smrtsolutions.survey.model.ParticipantTask</class>
+		<class>com.smrtsolutions.survey.model.Group</class>
+		<class>com.smrtsolutions.survey.model.Module</class>
+		<class>com.smrtsolutions.survey.model.Permission</class>
+		<class>com.smrtsolutions.survey.model.SurveyAllocate</class>
+		<class>com.smrtsolutions.survey.model.Tab</class>
+		<class>com.smrtsolutions.survey.model.Task</class>
+		<class>com.smrtsolutions.survey.model.TaskAssignment</class>
+		<class>com.smrtsolutions.survey.model.TaskNote</class>
+		<class>com.smrtsolutions.survey.model.PermissionTemplates</class>
+		<class>com.smrtsolutions.survey.model.ServiceName</class>
+		<class>com.smrtsolutions.survey.model.Location</class>
+		<class>com.smrtsolutions.survey.model.Partner</class>
+		<shared-cache-mode>ALL</shared-cache-mode>
+
+		<properties>
+			<property name="eclipselink.target-server"
+				value="org.eclipse.persistence.transaction.jotm.JotmTransactionController" />
+			<property name="eclipselink.target-database"
+				value="org.eclipse.persistence.nosql.adapters.mongo.MongoPlatform" />
+			<property name="eclipselink.nosql.connection-spec"
+				value="org.eclipse.persistence.nosql.adapters.mongo.MongoConnectionSpec" />
+			<property name="eclipselink.nosql.property.mongo.port"
+				value="27017" />
+			<property name="eclipselink.nosql.property.mongo.host"
+				value="localhost" />
+			<property name="eclipselink.nosql.property.mongo.db"
+				value="demo" />
+			<!-- <property name="eclipselink.nosql.property.user" value="smrt"/> <property 
+				name="eclipselink.nosql.property.password" value="password"/> -->
+			<property name="eclipselink.logging.level" value="FINEST" />
+		</properties>
+	</persistence-unit>
+</persistence>
